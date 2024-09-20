@@ -6,18 +6,21 @@ def main():
     print_itens(itens)
 
 def print_itens(itens: list[str]):
-    n = 1
+    itens_dict = {}
     for iten in itens:
-        print(f"{n} {iten.upper()}")
-        n += 1
-
+        if iten in itens_dict.keys():
+            itens_dict[iten] += 1
+        else:
+            itens_dict[iten] = 1
+    for iten, n in itens_dict.items():
+        print(f"{n} {iten}")
 
 def get_itens():
     itens = []
     while True:
         try:
             itens.append(
-                input("")
+                input("").upper()
             )
         except EOFError:
             return itens
