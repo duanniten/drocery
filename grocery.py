@@ -12,6 +12,7 @@ def print_itens(itens: list[str]):
             itens_dict[iten] += 1
         else:
             itens_dict[iten] = 1
+    itens_dict = sorted(itens_dict)
     for iten, n in itens_dict.items():
         print(f"{n} {iten}")
 
